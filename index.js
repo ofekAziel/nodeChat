@@ -34,7 +34,14 @@ wsServer = new WebSocketServer({
 
 function originIsAllowed(origin) {
 
-    return true;
+    if (true) {
+
+        return true;
+    }
+    else {
+
+        return false;
+    }
 }
 
 wsServer.on('request', function(request) {

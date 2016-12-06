@@ -13,11 +13,11 @@ window.onload = function() {
             var docFrag = document.createDocumentFragment();
             var b = document.createElement("b");
             b.className = "user-name";
-            b.innerHTML = splitMessage[0] + ":";
             var p = document.createElement("p");
             p.className = "message";
-            p.innerHTML = splitMessage[1];
+            b.appendChild(document.createTextNode(splitMessage[0] + ":"));
             docFrag.appendChild(b);
+            p.appendChild(document.createTextNode(splitMessage[1]));
             docFrag.appendChild(p);
             allMessages.appendChild(docFrag);
 
@@ -37,7 +37,6 @@ window.onload = function() {
         else {
 
             connection.send(userName.value + ":" + message.value);
-            userName.value = "";
             message.value = "";
         }
     };
