@@ -1,0 +1,22 @@
+#all-messages {
+    margin-top: 2%;
+    background-color: #337ab7;
+    height: 730px;
+}
+
+#username {
+    margin-top: 2%;
+    margin-left: 34%;
+    width: 30%;
+}
+
+#user-message {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 34%;
+    width: 30%;
+}
+
+#send-btn {
+    margin-left: 47%;
+}
