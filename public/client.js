@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
 
     var connection = new WebSocket('ws://10.103.51.5:8000/');
     var userName = document.querySelector("#username");
@@ -24,11 +24,9 @@ window.onload = function() {
     function sendMessage() {
 
         if (userName.value === "" || message === "") {
-
             connection.send("Error: can not send empty messages please try again.");
         }
         else {
-
             connection.send(userName.value + ":" + message.value);
             message.value = "";
         }
