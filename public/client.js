@@ -8,24 +8,17 @@ window.onload = function() {
 
     connection.onmessage = function (message) {
 
-        try {
-            var splitMessage = message.data.split(":");
-            var docFrag = document.createDocumentFragment();
-            var b = document.createElement("b");
-            b.className = "user-name";
-            var p = document.createElement("p");
-            p.className = "message";
-            b.appendChild(document.createTextNode(splitMessage[0] + ":"));
-            docFrag.appendChild(b);
-            p.appendChild(document.createTextNode(splitMessage[1]));
-            docFrag.appendChild(p);
-            allMessages.appendChild(docFrag);
-
-        } catch(e) {
-
-            console.log("ERROR!");
-            return;
-        }
+        var splitMessage = message.data.split(":");
+        var docFrag = document.createDocumentFragment();
+        var b = document.createElement("b");
+        b.className = "user-name";
+        var p = document.createElement("p");
+        p.className = "message";
+        b.appendChild(document.createTextNode(splitMessage[0] + ":"));
+        docFrag.appendChild(b);
+        p.appendChild(document.createTextNode(splitMessage[1]));
+        docFrag.appendChild(p);
+        allMessages.appendChild(docFrag);
     };
 
     function sendMessage() {
