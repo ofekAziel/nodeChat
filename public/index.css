@@ -1,6 +1,6 @@
 #all-messages {
     margin-top: 2%;
-    background-color: #337ab7;
+    background-image: url("/images/background.jpg");
     height: 730px;
 }
 
@@ -19,4 +19,13 @@
 
 #send-btn {
     margin-left: 47%;
+}
+
+.user-name {
+    color: red;
+}
+
+.message {
+    color: green;
+    margin-left: 1%;
 }

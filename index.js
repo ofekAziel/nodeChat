@@ -3,6 +3,7 @@ var http = require('http');
 var WebSocketServer = require('websocket').server;
 var static = require('node-static');
 var fileServer = new static.Server('./public');
+var connectedPeople = [];
 
 var server = http.createServer(function (request, response) {
 
@@ -37,8 +38,6 @@ function originIsAllowed(origin) {
 }
 
 wsServer.on('request', function(request) {
-
-    var connectedPeople = [];
 
     if (!originIsAllowed(request.origin)) {
 

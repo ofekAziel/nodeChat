@@ -8,15 +8,20 @@ window.onload = function() {
 
     connection.onmessage = function (message) {
 
-        try{
-
-            var message = (message.data);
+        try {
+            var splitMessage = message.data.split(":");
             var docFrag = document.createDocumentFragment();
             var b = document.createElement("b");
-            b.innerHTML = message;
+            b.className = "user-name";
+            b.innerHTML = splitMessage[0] + ":";
+            var p = document.createElement("p");
+            p.className = "message";
+            p.innerHTML = splitMessage[1];
             docFrag.appendChild(b);
+            docFrag.appendChild(p);
             allMessages.appendChild(docFrag);
-        } catch(e){
+
+        } catch(e) {
 
             console.log("ERROR!");
             return;
@@ -25,6 +30,15 @@ window.onload = function() {
 
     function sendMessage() {
 
-        connection.send(userName.value + " : " + message.value);
+        if (userName.value === "" || message === "") {
+
+            connection.send("Error: can not send empty messages please try again.");
+        }
+        else {
+
+            connection.send(userName.value + ":" + message.value);
+            userName.value = "";
+            message.value = "";
+        }
     };
 };
